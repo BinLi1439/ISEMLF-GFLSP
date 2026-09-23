@@ -103,8 +103,8 @@ install.packages(
 
 ### 3.2 How to run the demo
 1. Save the R script, e.g., as `imbalanced_ensemble_pipeline.R`.
-2. Point `excel_file_path` to the demo dataset, e.g., `excel_file_path <- "E:/watergap/dataset1.xlsx"` (Windows) or `"data/dataset1.xlsx"` (Linux/macOS).
-3. Run the entire script (or `source("imbalanced_ensemble_pipeline.R")`).
+2. Point `excel_file_path` to the demo dataset, e.g., `excel_file_path <- "E:/watergap/dataset.xlsx".
+3. Run the entire script (or `source("ISEMLF-GFLSP.R")`).
 
 ### 3.3 Expected output
 **Console (illustrative):**
@@ -189,7 +189,7 @@ Run time scales roughly linearly with rows × features; on a 4-core machine expe
 3. Run the whole script. The console prints, in order: data summary → class distributions (before/after rebalancing) → removed features → class weights → best hyperparameters per model → recommended dual thresholds → threshold sweep → per-model and ensemble metrics. The 5 PDFs and the `.RData` model archive are saved automatically.
 
 ### 4.4 Notes and troubleshooting
-- **Path format:** the default `excel_file_path` is a Windows path. On Linux/macOS use forward slashes and an absolute path (e.g., `"/home/user/data/dataset1.xlsx"`).
+- **Path format:** the default `excel_file_path` is a Windows path. On Linux/macOS use forward slashes and an absolute path (e.g., `"/home/user/data/dataset.xlsx"`).
 - **Working directory:** outputs are written to the current working directory — check `getwd()` first.
 - **Binary label required:** the label column must contain exactly two levels; otherwise the recoding step fails with an error.
 - **PR-curve step:** if `pr.curve()` reports a non-numeric `scores.class1` error, the helper function should pass the numeric negative-class scores (`scores.class1 = neg_scores`); correct that one line and rerun.
